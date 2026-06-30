@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okengo Caleb – Resume</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f4f6f9;
+      color: #1f2937;
+    }
+
+    nav {
+      position: relative;
+      background: transparent;
+      padding: 24px 10%;
+      box-shadow: none;
+      border-bottom: none;
+    }
+
+    .resume-container {
+      max-width: 960px;
+      margin: 120px auto 60px;
+      padding: 42px 42px 50px;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 32px 80px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .resume-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .resume-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .resume-header .role {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+
+    .resume-header p {
+      color: #4b5563;
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    .resume-meta {
+      text-align: right;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .resume-meta a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(37, 99, 235, 0.35);
+    }
+
+    .resume-meta div {
+      margin-bottom: 10px;
+    }
+
+    .resume-section {
+      margin-bottom: 34px;
+    }
+
+    .resume-section h2 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #2563eb;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .resume-item {
+      padding-top: 18px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .resume-item:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .resume-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .resume-item-header h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .resume-item-header .date {
+      font-size: 0.9rem;
+      color: #6b7280;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    }
+
+    .resume-item .company {
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .resume-item p,
+    .resume-item ul {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .resume-item ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .resume-item li {
+      margin-bottom: 8px;
+    }
+
+    .resume-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .resume-skills span {
+      padding: 8px 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #0f172a;
+    }
+
+    .resume-actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 14px;
+      justify-content: flex-start;
+    }
+
+    .btn-visual.primary {
+      background: #111827;
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .btn-visual.primary:hover {
+      transform: translateY(-2px);
+      background: #1f2937;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn-visual.secondary {
+      background: #f8fafc;
+      color: #111827;
+      border: 1px solid #d1d5db;
+      backdrop-filter: none;
+    }
+
+    .btn-visual.secondary:hover {
+      color: #2563eb;
+      border-color: #2563eb;
+      background: #eef2ff;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .resume-header {
+        grid-template-columns: 1fr;
+      }
+
+      .resume-meta {
+        text-align: left;
+      }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      nav, .no-print { display: none !important; }
+      .resume-container { box-shadow: none; border: none; margin: 0; padding: 0; }
+      .resume-item { border-color: #ddd; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <h2 class="brand">Okengo</h2>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Back to Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <section style="padding-top: 120px;">
+    <div class="resume-container">
+      <div class="resume-header">
+        <div>
+          <h1>Okengo Caleb</h1>
+          <p class="role">Full Stack Developer</p>
+          <p>
+            Senior developer focused on clean architecture, performance, and shipping products that scale. Based in Nairobi, Kenya, working worldwide.
+          </p>
+        </div>
+        <div class="resume-meta">
+        <div>Nairobi, Kenya (GMT+3)</div>
+        <div><a href="mailto:okengocaleb411@gmail.com">okengocaleb411@gmail.com</a></div>
+        <div><a href="https://github.com/okengocaleb686">github.com/okengocaleb686</a></div>
+        <div><a href="https://ke.linkedin.com/in/caleb-okengo-623826327?trk=public_profile_samename-profile">linkedin.com/in/caleb-okengo</a></div>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Professional Summary</h2>
+      <p style="color: var(--text-muted); line-height: 1.8;">
+        Full Stack Developer with 5+ years of experience building production-grade systems for startups and enterprise clients. Expertise in React, Node.js, Python, and Java. Proven track record of delivering scalable web applications, optimizing performance, and mentoring engineering teams. Strong focus on accessibility, testing, and maintainable codebases.
+      </p>
+    </div>
+
+    <div class="resume-section">
+      <h2>Core Competencies</h2>
+      <div class="resume-skills">
+        <span>JavaScript (ES6+)</span>
+        <span>TypeScript</span>
+        <span>React</span>
+        <span>Next.js</span>
+        <span>Node.js</span>
+        <span>Express</span>
+        <span>Python</span>
+        <span>Java</span>
+        <span>PostgreSQL</span>
+        <span>MongoDB</span>
+        <span>Redis</span>
+        <span>Docker</span>
+        <span>AWS</span>
+        <span>REST APIs</span>
+        <span>GraphQL</span>
+        <span>CI/CD</span>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Work Experience</h2>
+
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>Senior Full Stack Developer</h3>
+          <span class="date">2022 – Present</span>
+        </div>
+        <div class="company">Tech Innovators Ltd, Nairobi</div>
+        <ul>
+          <li>Lead architecture and delivery of a B2B SaaS platform serving 200+ enterprise customers</li>
+          <li>Reduced provisioning time by 60% through a new multi-tenant permission system</li>
+          <li>Mentor 4 engineers and own Next.js 14 migration</li>
+          <li>Drove deployment reliability improvements saving 35% on infrastructure costs</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>Full Stack Developer</h3>
+          <span class="date">2019 – 2022</span>
+        </div>
+        <div class="company">Digital Solutions Co, Nairobi</div>
+        <ul>
+          <li>Built customer-facing dashboards and internal tools supporting 50k+ users</li>
+          <li>Introduced automated testing, cutting regression bugs by 70%</li>
+          <li>Optimized Core Web Vitals: LCP dropped from 4.2s to 1.8s</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>Frontend Developer</h3>
+          <span class="date">2017 – 2019</span>
+        </div>
+        <div class="company">Creative Agency KE, Nairobi</div>
+        <ul>
+          <li>Delivered responsive marketing sites and dashboards for 25+ brands</li>
+          <li>Collaborated with designers to translate wireframes into pixel-perfect UIs</li>
+          <li>Championed component-driven development and accessibility-first design</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Selected Projects</h2>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>Meraki Dashboard</h3>
+          <span class="date">2024</span>
+        </div>
+        <p>Modular analytics platform with real-time reporting, team collaboration, and RBAC. Zero critical incidents in year one.</p>
+        <div class="resume-skills">
+          <span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span><span>tRPC</span>
+        </div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>Atlas Commerce</h3>
+          <span class="date">2023</span>
+        </div>
+        <p>High-conversion storefront with Stripe checkout, Redis-backed inventory automation, and customer analytics.</p>
+        <div class="resume-skills">
+          <span>React</span><span>Node.js</span><span>Stripe</span><span>MongoDB</span><span>Redis</span>
+        </div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>Forma UI</h3>
+          <span class="date">2023</span>
+        </div>
+        <p>Accessible, headless component library with 20+ primitives. Reduced bundle size by 40% vs. incumbents.</p>
+        <div class="resume-skills">
+          <span>TypeScript</span><span>Tailwind</span><span>Storybook</span><span>Rollup</span><span>A11y</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Education & Certifications</h2>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <h3>BSc Computer Science</h3>
+          <span class="date">2014 – 2018</span>
+        </div>
+        <div class="company">Kenyatta University </div>
+      </div>
+    </div>
+
+    <div class="resume-actions no-print">
+      <a href="index.html" class="btn-visual secondary">← Back to Portfolio</a>
+      <button onclick="window.print()" class="btn-visual primary">
+        <i class="fas fa-print"></i> Print / Save as PDF
+      </button>
+    </div>
+  </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
