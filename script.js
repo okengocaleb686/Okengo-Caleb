@@ -3,10 +3,12 @@ const navLinks = document.getElementById('navLinks');
 const navbar = document.getElementById('navbar');
 const yearEl = document.getElementById('year');
 
+// Set current year
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+// Mobile menu toggle
 function toggleMenu() {
   const isOpen = navLinks.classList.toggle('open');
   if (menuToggle) {
@@ -22,13 +24,23 @@ function toggleMenu() {
 if (menuToggle && navLinks) {
   menuToggle.addEventListener('click', toggleMenu);
 
+  // Close menu when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
+      }
     });
   });
 }
 
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
@@ -37,6 +49,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Reveal animation on scroll
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -53,6 +66,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
+// Active navigation highlight
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
@@ -74,3 +88,17 @@ const sectionObserver = new IntersectionObserver((entries) => {
 });
 
 sections.forEach(section => sectionObserver.observe(section));
+
+// Smooth scroll behavior for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#' && href.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
