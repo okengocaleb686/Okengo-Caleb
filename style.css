@@ -213,8 +213,8 @@ nav h2 {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  filter: blur(40px);  /* Reduced blur for visibility */
-  opacity: 0.6;        /* Increased from 0.3 */
+  filter: blur(40px);
+  opacity: 0.6;
   animation: bgPulse 6s ease-in-out infinite;
   z-index: 0;
 }
@@ -287,105 +287,78 @@ nav h2 {
   50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.03); }
 }
 
-.hero-image-badge {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(17, 26, 46, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  padding: 16px 20px;
-  backdrop-filter: blur(20px);
-  z-index: 3;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  animation: floatBadge 5s ease-in-out infinite;
-}
-
+/* Badge Styles - UNIFIED */
+.hero-image-badge,
 .hero-image-badge-top-left {
   position: absolute;
-  top: 20px;
-  left: 20px;
   background: rgba(17, 26, 46, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
-  padding: 10px 16px;
+  padding: 12px 16px;
   backdrop-filter: blur(20px);
   z-index: 3;
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  animation: floatBadge 5s ease-in-out 1s infinite;
+  animation: floatBadge 5s ease-in-out infinite;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: var(--primary);
+  gap: 10px;
   font-weight: 600;
 }
 
+.hero-image-badge-top-left {
+  top: 20px;
+  left: 20px;
+  flex-direction: row;
+  color: var(--primary);
+}
+
+.hero-image-badge-top-left i {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.hero-image-badge {
+  bottom: 20px;
+  right: 20px;
+}
+
 .hero-image-badge .badge-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
-  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  flex-shrink: 0;
+}
+
+.hero-image-badge .badge-icon i {
+  font-size: 0.9rem;
   color: #000;
   font-weight: 800;
 }
 
-.hero-image-badge .badge-text {
+.hero-image-badge .badge-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .hero-image-badge .badge-num {
-  font-size: 1.3rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--primary);
+  line-height: 1;
 }
 
 .hero-image-badge .badge-label {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: 500;
-}
-
-.hero-availability-badge {
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  background: rgba(17, 26, 46, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 10px 16px;
-  backdrop-filter: blur(20px);
-  z-index: 3;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  animation: floatBadge 5s ease-in-out 1s infinite;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero-availability-badge .avail-dot {
-  width: 10px;
-  height: 10px;
-  background: var(--primary);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 10px var(--primary);
-}
-
-.hero-availability-badge .avail-text {
-  font-size: 0.8rem;
-  color: #fff;
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1;
 }
 
 @keyframes floatBadge {
@@ -624,6 +597,11 @@ nav h2 {
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
   50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Generic Sections */
@@ -1010,7 +988,7 @@ footer {
 .footer-bottom {
   max-width: 1200px;
   margin: 0 auto;
-    text-align: center;
+  text-align: center;
   padding-top: 40px;
   border-top: 1px solid var(--border);
   color: var(--text-muted);
@@ -1060,6 +1038,21 @@ footer {
     max-height: 280px;
   }
   
+  .hero-image-badge,
+  .hero-image-badge-top-left {
+    padding: 10px 14px;
+    font-size: 0.8rem;
+  }
+  
+  .hero-image-badge .badge-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .hero-image-badge .badge-num {
+    font-size: 0.85rem;
+  }
+  
   .hero-headline {
     font-size: clamp(2rem, 4vw, 2.8rem);
   }
@@ -1076,8 +1069,8 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
   
-
-  grid-template-columns: 1fr;
+  .footer-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1091,18 +1084,28 @@ footer {
     max-height: 240px;
   }
   
-  .hero-image-badge {
-    padding: 12px 16px;
+  .hero-image-badge,
+  .hero-image-badge-top-left {
+    padding: 9px 12px;
     font-size: 0.75rem;
-    bottom: 15px;
-    right: 15px;
+    border-radius: 10px;
   }
   
-  .hero-image-badge-top-left {
-    top: 15px;
-    left: 15px;
-    padding: 8px 12px;
-    font-size: 0.7rem;
+  .hero-image-badge .badge-icon {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .hero-image-badge .badge-icon i {
+    font-size: 0.8rem;
+  }
+  
+  .hero-image-badge .badge-num {
+    font-size: 0.8rem;
+  }
+  
+  .hero-image-badge .badge-label {
+    font-size: 0.65rem;
   }
   
   .contact-grid {
